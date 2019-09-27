@@ -10,11 +10,11 @@ This is a proof-of-concept. Suggestions and or PRs are welcome.
 
 You can start the a `tmux` session like that:
 
-    tmux new-session -d -s mysession "python3"
+    ~# tmux new-session -d -s mysession "python3"
 
 How to run a command (and get the output):
 
-    ./trun.sh -s mysession -c "the command"
+    ~# ./trun.sh -s mysession -c "the command"
 
 It should return the desired output. You may have to adjust the `-H` and `-T` parameters. In some cases, like the `python3` interpreter, you may have to use `-e "C-m C-m` (double `enter`) for multiline commands.
 
@@ -52,14 +52,14 @@ I tested this with `python3` and `zsh`:
 
 **Python**
 
-    >tmux new-session -d -s pytest "python3"
-    >./trun.sh -s pytest -c 'for i in range(1000000): print("test")' -e "C-m C-m"
+    ~# tmux new-session -d -s pytest "python3"
+    ~# ./trun.sh -s pytest -c 'for i in range(1000000): print("test")' -e "C-m C-m"
     test
     [redacted]
     test
 
 **ZSH**
 
-    >tmux new-session -d -s zshtest "/bin/zsh"
-    >./trun.sh -s zshtest -c 'ls' -T 1
+    ~# tmux new-session -d -s zshtest "/bin/zsh"
+    ~# ./trun.sh -s zshtest -c 'ls' -T 1
     README.md trun.sh
