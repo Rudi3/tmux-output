@@ -33,9 +33,9 @@ To detect when the command is done, these checks are performed in a loop:
 **About the stack trace**
 To detect at which point the program is stuck at a relevant IO Operation we can run a stack trace and look for that. Also see: [How do I tell if a command is running or waiting for user input?(askubuntu)](https://askubuntu.com/a/1118117/834547).
 
-That may be a bit tricky because it may be temporarily stuck at at another `read` something like that before the desired one. It may also have to involve some guessing based on how long it is stuck and at which file descriptor.
+That may be a bit tricky because it may be temporarily stuck at another `read` or something like that before the desired call. It may also have to involve some guessing based on how long it is stuck and at which file descriptor.
 
-While testing this, I encountered `read(10, ` (zsh) and `select(1, [0], NULL, NULL, NULL` (python3 cli interpreter). There may be few other possibilities, which is why I didn't limit the `RegEx` in the script to just that. It is just looking for an open parenthesis now.
+While testing this, I've encountered `read(10, ` (`zsh`) and `select(1, [0], NULL, NULL, NULL` (`python3` cli interpreter). There may be few other possibilities, which is why I didn't limit the `RegEx` in the script to just that. It is just looking for an open parenthesis now.
 
 **Capturing the output**
 
