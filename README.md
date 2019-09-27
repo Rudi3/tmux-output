@@ -53,7 +53,7 @@ I tested this with `python3` and `zsh`:
 **Python**
 
     >tmux new-session -d -s pytest "python3"
-    >./myscript.sh -s pytest -c 'for i in range(1000000): print("test")' -e "C-m C-m"
+    >./trun.sh -s pytest -c 'for i in range(1000000): print("test")' -e "C-m C-m"
     test
     [redacted]
     test
@@ -61,5 +61,5 @@ I tested this with `python3` and `zsh`:
 **ZSH**
 
     >tmux new-session -d -s zshtest "/bin/zsh"
-    >./myscript.sh -s zshtest -c 'ls' -T 1
-    [some folders]
+    >./trun.sh -s zshtest -c 'ls' -T 1
+    README.md trun.sh
