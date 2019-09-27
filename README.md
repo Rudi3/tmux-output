@@ -1,7 +1,4 @@
 # tmux-output
-Bash tool to get the output of commands sent to an interactive cli program using tmux
-
--------
 
 I made this because of a question on [unix.stackexchange.com](https://unix.stackexchange.com/questions/543206/read-output-from-screen), which touched upon this problem.
 I tought that it may be convenient to have a "quick" way to send commands to a shell-like program and get the result synchronously. If the shell has a prompt string or symbol, waiting for the symbol would make more sense than what this is doing here. This is meant for "symbol-idependent detection" of when a command is done.
